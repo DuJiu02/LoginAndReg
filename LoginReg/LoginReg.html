@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-image: url(img/3.gif);
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+			.color{
+				list-style-type: none;
+				width: 120px;
+				height: 20px;
+				margin: 0 auto;
+				position: fixed;
+				left: 50%;
+				margin-left: -40px;
+				bottom: 20px;
+			}
+			.color li{
+				float: left;
+				margin: 0 5px;
+				width: 20px;
+				height: 20px;
+				background: #ccc;
+				box-shadow: 0 0 4px #FFF;
+				list-style: none;
+				cursor: pointer;
+			}
+			.logo_box{
+				width: 400px;
+				height: 400px;
+				color: #EEE;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/* margin-left: -45px; */
+				margin-left: -200px;
+				margin-top: -250px;
+				z-index: 999;
+			}
+			
+			.logo_box h3{
+				text-align: center;
+				color: #FFF;
+				height: 155px;
+				font-size: 16px;
+			}
+			
+			.input_outer{
+				height: 46px;
+				padding: 0 5px;
+				margin-bottom: 20px;
+				border-radius: 50px;
+				box-shadow: 50px;
+				position: relative;
+				border: 2px solid #EAECEC !important;
+			}
+			
+			.u_user{
+				width: 25px;
+				height: 25px;
+				background: url(img/登录用户.png);
+				background-size: 25px 25px;
+				background-position: -125px 0;
+				position: absolute;
+				margin: 12px 13px;
+			}
+			
+			.us_uer{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/登录密码.png);
+				background-size: 25px 25px;
+				background-position: -125px -25px;
+				position: absolute;
+				margin: 12px 13px;
+			}
+			
+			.text{
+				margin-left: 40px;
+				margin-top: 3px;
+				padding: 10px;
+				background-color: transparent;
+				border: none;
+				color: #FFFFFF;
+				font-family: "微软雅黑";
+				letter-spacing: 2px;
+				font-size: 15px;
+				outline: none;
+			}
+			
+			.mb2_submit{
+				height: 46px;
+				width: 400px;
+				padding: 0 5px;
+				margin-bottom: 20px;
+				border-radius: 50px;
+				box-shadow: 50px;
+				position: relative;
+				background-color: #29333F;
+				font-size: 15px;
+				font-weight: bold;	
+				color: #fff;
+			}
+			
+			.input_yzm{
+				height: 46px;
+				width: 250px;
+				padding: 0 5px;
+				margin-bottom: 20px;
+				border-radius: 50px;
+				box-shadow: 50px;
+				position: relative;
+				border: 2px solid #EAECEC !important;
+				display: inline-block;
+			}
+			.div_yzm{
+				height: 40px;
+				width: 110px;
+				border-radius: 50px;
+				background-color: transparent;
+				display: inline-block;
+				border: 2px solid #EAECEC !important;
+				text-align: center;
+				color: #6d6d6d;
+			}
+			
+			.us_eamil{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/QQ.png);
+				background-size: 25px 25px;
+				background-position: -125px -25px;
+				position: absolute;
+				margin: 12px 13px;
+			}
+			.us_yzm{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/验证码.png);
+				background-size: 25px 25px;
+				background-position: -125px -25px;
+				position: absolute;
+				margin: 12px 13px;
+			}
+			.us_pwd{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/登录密码.png);
+				background-size: 25px 25px;
+				background-position: -125px -25px;
+				position: absolute;
+				margin: 12px 13px;
+			}
+			.us_pwd2{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/确认密码.png);
+				background-size: 25px 25px;
+				background-position: -125px -25px;
+				position: absolute;
+				margin: 12px 13px;
+			}
+		</style>
+		
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".one").mouseover(function(){
+					$("body").css( "background-image" ,"url('img/3.gif')");
+				});
+				
+				$(".two").mouseover(function(){
+					$("body").css( "background-image" ,"url('img/4.gif')");
+				});
+				
+				$(".three").mouseover(function(){
+					$("body").css( "background-image" ,"url('img/5.gif')");
+				});
+				
+				$(".four").mouseover(function(){
+					$("body").css( "background-image" ,"url('img/6.gif')");
+				});
+				
+				$(".mb2_submit").mouseover(function(){
+					$('.mb2_submit').css({
+						"background-image":"url('img/login.gif')",
+						"background-position":"-90px -300px",
+					});
+				});
+				$(".mb2_submit").mouseout(function(){
+					$('.mb2_submit').css({
+						"background-image":"url('')",
+					});
+				});
+			});
+				
+				function reg(){
+					$("#log").hide();
+					$("#reg").show();
+				}
+				
+				function log(){
+					$("#log").show();
+					$("#reg").hide();
+				}
+			
+			
+				var countdown=60; 
+				function settime(val) { 
+				if (countdown == 0) { 
+				val.removeAttribute("disabled"); 
+				val.value="免费获取验证码"; 
+				countdown = 60; 
+				} else { 
+				val.setAttribute("disabled", true); 
+				val.value="重新发送(" + countdown + ")"; 
+				countdown--; 
+				} 
+				setTimeout(function() { 
+				settime(val) 
+				},1000) 
+				} 
+			
+			
+		</script>
+	</head>
+	<body>
+		<ul class="color">
+			<li class="one" style="background-color: #161616;"></li>
+			<li class="two" style="background-color: #29333f;"></li>
+			<li class="three" style="background-color: #29282e;"></li>
+			<li class="four" style="background-color: #FFFFFF;"></li>
+		</ul>
+		
+		<div id="log">
+			<div class="logo_box">
+				<h3>
+					<img src="img/tx.png" class="imguser">
+					<br>
+					用户登录
+				</h3>
+				<form name="loginForm" method="post" action="">
+					<div class="input_outer"> <span class="u_user"></span>
+						<input id="uname" name="uname" class="text" type="text" placeholder="请输入账号" autocomplete="off">
+					</div>
+					<div class="input_outer"> <span class="us_uer"></span>
+						<input id="upassword" name="upassword" class="text" placeholder="请输入密码" type="password" autocomplete="off">
+					</div>
+					<span style="position: absolute;right: 20px;font-size: 13px;"><a href="">找回密码</a></span>
+					<br><br>
+					<div class="mb2">
+						<input type="Submit" class="mb2_submit" value="登 录">
+					</div>
+					<a href="JavaScript:reg();" style="font-size: 13px;">无账号？点击注册</a>
+					<span style="position: absolute;right: 20px;font-size: 13px;"><a href="">刷脸登录</a></span>
+				</form>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<div id="reg" style="display: none;">
+			<div class="logo_box">
+				<h3>
+					<img src="img/tx.png" class="imguser">
+					<br>
+					用户注册
+				</h3>
+				<form name="loginForm" method="post" action="">
+					<div class="input_outer"> <span class="u_user"></span>
+						<input  class="text" type="text" placeholder="用户名" autocomplete="off">
+					</div>
+					<div class="input_outer"> <span class="us_eamil"></span>
+						<input  class="text" placeholder="QQ邮箱" type="email" autocomplete="off">
+					</div>
+					<div class="input_yzm"> <span class="us_yzm"></span>
+						<input class="text" placeholder="请验证码" type="text" autocomplete="off">
+					</div>
+					<input type="button" class="div_yzm" id="btn" style="line-height: 40px;" value="获取验证码" onclick="settime(this)">
+					<div class="input_outer"> <span class="us_pwd"></span>
+						<input  class="text" placeholder="请输入密码" type="password" autocomplete="off">
+					</div>
+					<div class="input_outer"> <span class="us_pwd2"></span>
+						<input class="text" placeholder="确认密码" type="password" autocomplete="off">
+					</div>
+					<div>
+						<input type="Submit" class="mb2_submit" value="立 即 注 册">
+					</div>
+					<a href="JavaScript:log();">已有账号？点击登录</a>
+					<a href="" style="position: absolute;right: 20px;margin-top: 20px;">注册时会有人脸注册。此功能方便登录时，使用人脸。</a>
+				</form>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
